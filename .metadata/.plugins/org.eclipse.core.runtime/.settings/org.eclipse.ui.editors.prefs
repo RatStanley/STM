@@ -1,0 +1,4 @@
+AbstractTextEditor.Color.Foreground=128,128,128
+eclipse.preferences.version=1
+org.eclipse.cdt.ui.occurrenceHighlighting=false
+org.eclipse.cdt.ui.writeOccurrenceIndicationColor=46,33,7
