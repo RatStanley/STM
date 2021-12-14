@@ -52,6 +52,8 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
 int AdcValue;
+float factor[] = {0.2, 0.2, 0.2, 0.2, 0.2};
+int xVal[] = {0,0,0,0,0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -462,10 +464,30 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback	(TIM_HandleTypeDef * 	htim)
 {
+	int zad = 0;
 	HAL_ADC_Start(&hadc1);
 	HAL_ADC_PollForConversion(&hadc1, AdcValue);
 	AdcValue = HAL_ADC_GetValue(&hadc1);
-	HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, AdcValue);
+	static int it = 0;
+	switch ( zad )
+	{
+	    case 0:
+
+	    	HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, AdcValue);
+	        break;
+	    case 1:
+	    	xVal[it] = AdcValue;
+	    	int out = factor[0]*xVal[0] + factor[1]*xVal[1] + factor[2]*xVal[2] + factor[3]*xVal[3] + factor[4]*xVal[4];
+	    	HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, out);
+	    	if(it < 4)
+	    	{
+	    		it = it + 1;
+	    	}
+	    	else
+	    		it = 0;
+	    	break;
+	}
+
 }
 
 /* USER CODE END 4 */

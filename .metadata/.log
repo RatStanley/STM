@@ -269,3 +269,18 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2021-12-13 19:36:18.692
 !MESSAGE Indexed 'Lab_10' (28 sources, 88 headers) in 2.17 sec: 7,032 declarations; 43,477 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.004%)
+!SESSION 2021-12-14 13:31:00.706 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-12-14 13:33:23.295
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-12-14 13:33:23.352
+!MESSAGE Log4j initialized with config file E:\Code\STM\STM\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-12-14 13:33:40.111
+!MESSAGE Started RMI Server, listening on port 41337
